@@ -1,5 +1,6 @@
 <script setup>
 import { reactive, ref } from 'vue'
+
 const usuario = reactive({
   nome: '',
   email: '',
@@ -128,9 +129,6 @@ function validar() {
         </div>
         <button type="submit">Mostrar</button>
       </form>
-    </div>
-    <div>
-      <h1>teste</h1>
     </div>
   </div>
 </template>
