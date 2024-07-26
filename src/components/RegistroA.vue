@@ -1,6 +1,6 @@
 <script setup>
 import { reactive, ref } from 'vue'
-
+const emit = defineEmits(['resultado'])
 const usuario = reactive({
   nome: '',
   email: '',
@@ -52,6 +52,7 @@ function validar() {
   }
   if (!erro) {
     mostrarResultado.value = !mostrarResultado.value
+    emit('resultado', { ...usuario })
   }
 }
 </script>
@@ -75,7 +76,7 @@ function validar() {
         </div>
         <div class="row">
           <label for="">Confirmar Senha:</label>
-          <input type="password" v-model="confirmarsenusuario.ha" />
+          <input type="password" v-model="usuario.confirmarsenha" />
         </div>
         <div class="row">
           <label for="">Data de Nascimento:</label>
